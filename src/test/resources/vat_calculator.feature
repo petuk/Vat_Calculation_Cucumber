@@ -5,13 +5,13 @@ Feature: VAT Calculation
 
   Scenario Outline: Calculate VAT with Gross Amount and VAT Rate
     Given I am on the VAT Calculator page
-    When I enter "<grossamount>" into the Gross Amount field
+    When I enter "<gross_amount>" into the Gross Amount field
     And I select "<vatrate>" the VAT Rate
     Then the calculated VAT should be "<vatamount>"
     And the calculated Net Amount should be "<netamount>"
 
     Examples:
-      | grossamount | vatrate | vatamount | netamount |
+      | gross_amount | vatrate | vatamount | netamount |
       | 100          | 20%      | 20.00      | 83.33      |
       | 200          | 20%      | 33.33      | 166.67     |
       | 50           | 5%       | 2.38       | 47.62      |
