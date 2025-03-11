@@ -33,6 +33,13 @@ public class VatCalculatorSteps {
         netAmountField.sendKeys(netAmount);
     }
 
+    @When("I enter {string} into the Vat Amount field")
+    public void iEnterIntoTheVatAmountField(String vatAmount) {
+        WebElement vatAmountField = driver.findElement(By.id("VATsum"));
+        vatAmountField.clear();
+        vatAmountField.sendKeys(vatAmount);
+    }
+
     @When("I select {string} from the VAT Rate")
     public void iSelectFromTheVATRate(String vatRate) {
         Select vatRateRadio = new Select(driver.findElement(By.id("VAT_" + vatRate )));
@@ -51,7 +58,6 @@ public class VatCalculatorSteps {
         WebElement grossResultField = driver.findElement(By.id("Price"));
         String actualGross = grossResultField.getAttribute("value");
         Assert.assertEquals(actualGross, expectedGross);
-        driver.quit();
     }
 
     @Then("the calculated Net Amount should be {string}")
