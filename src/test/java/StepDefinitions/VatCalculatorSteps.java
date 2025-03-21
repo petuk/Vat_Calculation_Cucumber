@@ -1,3 +1,6 @@
+package StepDefinitions;
+
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,8 +43,8 @@ public class VatCalculatorSteps {
         vatAmountField.sendKeys(vatAmount);
     }
 
-    @When("I select {string} from the VAT Rate")
-    public void iSelectFromTheVATRate(String vatRate) {
+    @And("I select {string} the VAT Rate")
+    public void iSelectTheVATRate(String vatRate) {
         Select vatRateRadio = new Select(driver.findElement(By.id("VAT_" + vatRate )));
         vatRateRadio.selectByVisibleText(vatRate);
     }
@@ -67,4 +70,5 @@ public class VatCalculatorSteps {
         Assert.assertEquals(actualNet, expectedNet);
         driver.quit();
     }
+
 }

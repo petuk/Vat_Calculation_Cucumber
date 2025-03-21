@@ -22,7 +22,7 @@ Feature: VAT Calculation
   Scenario Outline: Calculate VAT with Net Amount and VAT Rate
     Given I am on the VAT Calculator page
     When I enter "<net_amount>" into the Net Amount field
-    And I select "<vat_rate>" VAT Rate
+    And I select "<vat_rate>" the VAT Rate
     Then the calculated VAT should be "<vat_amount>"
     And the calculated Gross Amount should be "<gross_amount>"
 
@@ -37,7 +37,7 @@ Feature: VAT Calculation
   Scenario Outline: Calculate VAT with Vat Amount and VAT Rate
     Given I am on the VAT Calculator page
     When I enter "<vat_amount>" into the Vat Amount field
-    And I select "<vat_rate>" VAT Rate
+    And I select "<vat_rate>" the VAT Rate
     Then the calculated Gross Amount should be "<gross_amount>"
     And the calculated Net Amount should be "<net_amount>"
 
